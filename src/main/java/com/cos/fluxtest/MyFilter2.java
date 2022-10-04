@@ -14,7 +14,7 @@ public class MyFilter2 implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chai응) throws IOException, ServletException {
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         System.out.println("필터2 실행됨");
 
         // 데이터를 발생 시켜서

@@ -14,13 +14,13 @@ public class MyFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chai응) throws IOException, ServletException {
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         System.out.println("필터 실행됨");
 
         HttpServletResponse res = (HttpServletResponse) response;
         res.setContentType("text/event-stream;charset=UTF-8");
 //        res.setContentType("text/html;charset=UTF-8");
-//        res.setContentType("text/plain;charset=UTF-8"); // 브라우저가 마임타입이 text/plain이면 버퍼를 비워도 바로 표시되지 않고 한번에 표시.
+//        res.setContentType("text/plain;charset=UTF-8"); // 브라우저가 마인타입이 text/plain이면 버퍼를 비워도 바로 표시되지 않고 한번에 표시.
         PrintWriter out = res.getWriter();
 
         // 1. Reactive Stream 라이브러리를 쓰면 표준을 지켜서 사용 할 수 있음
